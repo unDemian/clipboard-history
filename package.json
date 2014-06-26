@@ -1,0 +1,21 @@
+{
+  "name": "clipboard-history",
+  "author": {
+    "name": "Andrei Demian",
+    "url": "http://twitter.com/unDemian"
+  },
+  "main": "./lib/clipboard-history",
+  "version": "0.1.0",
+  "description": "Keep a history of your clipboard items. Let you paste them back in, as needed.",
+  "activationEvents": [
+    "clipboard-history:copy",
+    "clipboard-history:paste"
+  ],
+  "repository": "https://github.com/atom/clipboard-history",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
