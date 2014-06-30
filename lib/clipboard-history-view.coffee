@@ -11,7 +11,7 @@ class ClipboardHistoryView extends SelectListView
   ###############################
   initialize: (@history) ->
     super
-    @addClass('overlay from-bottom')
+    @addClass('overlay clipboard-history from-bottom')
     @editor = atom.workspace.getActiveEditor()
 
     @_handleEvents()
@@ -25,8 +25,6 @@ class ClipboardHistoryView extends SelectListView
     # Check OS clipboard
     clipboardItem = atom.clipboard.read()
     if clipboardItem.length > 0 and not @forceClear
-
-      # Check existence
       exists = false
       for item in @history
         if item.text is clipboardItem
@@ -36,13 +34,14 @@ class ClipboardHistoryView extends SelectListView
         @_add clipboardItem
 
     if @history.length > 0
-      @setItems @history.slice(0).reverse()
-
-      # View
-      @_setPosition()
       @setMaxItems(15)
-      atom.workspaceView.append this
-      @focusFilterEditor()
+      @setItems @history.slice(0).reverse()
+    else
+      @setError "There are no items in your clipboard."
+
+    @_setPosition()
+    atom.workspaceView.append this
+    @focusFilterEditor()
 
   # Overrides (Select List)
   ###############################
@@ -51,7 +50,8 @@ class ClipboardHistoryView extends SelectListView
 
   viewForItem: ({text, date}) ->
     if date
-      text = @_limitString text, 70
+      initialText = text
+      text = @_limitString text, 65
       date = @_timeSince date
 
       $$ ->
@@ -59,10 +59,27 @@ class ClipboardHistoryView extends SelectListView
           @div class: 'pull-right secondary-line', =>
             @span date
           @span text
+          @div class: 'preview hidden panel-bottom padded', =>
+            @pre initialText
     else
       $$ ->
-        @li class: 'text-center', =>
+        @li class: 'two-lines text-center', =>
           @span text
+
+  selectItemView: (view) ->
+    # Default behaviour
+    return unless view.length
+    @list.find('.selected').removeClass('selected')
+    view.addClass 'selected'
+    @scrollToItemView view
+
+    # Show preview
+    @list.find('.preview').addClass('hidden')
+    preview = view.find '.preview'
+    if preview.length isnt 0 and preview.text().length > 65
+      if view.position().top isnt 0
+        preview.css({ 'top': (view.position().top - 5) + 'px'})
+      preview.removeClass 'hidden'
 
   confirmed: (item) ->
     if item.date
@@ -105,12 +122,12 @@ class ClipboardHistoryView extends SelectListView
     seconds = Math.floor((new Date() - date) / 1000)
 
     interval = Math.floor(seconds / 3600)
-    return interval + " hours"  if interval > 1
+    return interval + " hours ago"  if interval > 1
 
     interval = Math.floor(seconds / 60)
-    return interval + " minutes"  if interval > 1
+    return interval + " minutes ago"  if interval > 1
 
-    return Math.floor(seconds) + " seconds" if seconds > 0
+    return Math.floor(seconds) + " seconds ago" if seconds > 0
 
     "now"
 
