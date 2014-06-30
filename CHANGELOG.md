@@ -1,4 +1,7 @@
-## 0.3.2 - Features
+## 0.3.1 - Bugfixing
+* Fix changelog versioning
+
+## 0.3.0 - Features
 * Add preview for long code
 * Fix time since
 * Move screenshot to repo
