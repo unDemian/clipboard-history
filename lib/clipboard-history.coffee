@@ -5,9 +5,6 @@ module.exports =
   history: []
   clipboard: null
 
-  configDefaults:
-    enabled: false
-
   activate: () ->
     @clipboard = new ClipboardHistoryView(@history)
 
