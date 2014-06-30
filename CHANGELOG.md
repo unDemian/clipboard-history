@@ -1,3 +1,6 @@
+## 0.3.2 - Bugfixing
+* Remove unused settings
+
 ## 0.3.1 - Bugfixing
 * Fix changelog versioning
 
