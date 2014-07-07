@@ -1,4 +1,7 @@
-## 0.4.2 - Features
+## 0.4.1 - Bugfixing
+* Fix changelog versioning
+
+## 0.4.0 - Features
 * FIX CRITICAL "multiple projects & tabs" BUG - Sorry for that :)
 * Add Settings
 * Enhance functionality and code quality
