@@ -2,13 +2,25 @@ ClipboardHistoryView = require './clipboard-history-view'
 
 module.exports =
 
+  configDefaults:
+    showClearHistoryButton: true
+    showSnippetForLargeItems: true
+
   history: []
   clipboard: null
+  editorSubscription: null
 
   activate: () ->
-    @clipboard = new ClipboardHistoryView(@history)
+    @editorSubscription = atom.workspaceView.eachEditorView (editor) =>
+      if editor.attached and not editor.mini
+        @clipboard = new ClipboardHistoryView @history, editor
+
+        editor.on 'editor:will-be-removed', =>
+          @clipboard.remove()
 
   deactivate: ->
-    @clipboard.destroy(off)
+    @editorSubscription?.off()
+    @editorSubscription = null
+    @clipboard.remove()
 
   serialize: ->

@@ -1,3 +1,8 @@
+## 0.4.2 - Features
+* FIX CRITICAL "multiple projects & tabs" BUG - Sorry for that :)
+* Add Settings
+* Enhance functionality and code quality
+
 ## 0.3.2 - Bugfixing
 * Remove unused settings
 
