@@ -1,3 +1,6 @@
+## 0.4.3 - Bugfixing
+* Update repo name
+
 ## 0.4.2 - Enhancements
 * Update demo gif
 * Maximum history items setting
