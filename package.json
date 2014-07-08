@@ -5,7 +5,7 @@
     "url": "http://twitter.com/unDemian"
   },
   "main": "./lib/clipboard-history",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Keep a history of your clipboard items. Let you paste them back in, as needed.",
   "activationEvents": [
     "clipboard-history:copy",
