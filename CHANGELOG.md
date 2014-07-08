@@ -1,3 +1,8 @@
+## 0.4.2 - Enhancements
+* Update demo gif
+* Maximum history items setting
+* Code enhancements
+
 ## 0.4.1 - Bugfixing
 * Fix changelog versioning
 

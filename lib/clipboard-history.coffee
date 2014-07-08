@@ -5,6 +5,7 @@ module.exports =
   configDefaults:
     showClearHistoryButton: true
     showSnippetForLargeItems: true
+    maximumHistoryItems: 15
 
   history: []
   clipboard: null
