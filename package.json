@@ -11,7 +11,7 @@
     "clipboard-history:copy",
     "clipboard-history:paste"
   ],
-  "repository": "https://github.com/unDemian/atom-clipboard-history",
+  "repository": "https://github.com/unDemian/clipboard-history",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
