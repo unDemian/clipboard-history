@@ -85,6 +85,7 @@ class ClipboardHistoryView extends SelectListView
     else
       @history.splice(@history.indexOf(item), 1)
       @history.push(item)
+      atom.clipboard.write(item.text)
       atom.workspaceView.getActivePaneItem().insertText item.text,
         select: true
     @cancel()
