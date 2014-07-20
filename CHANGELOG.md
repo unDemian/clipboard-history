@@ -1,3 +1,10 @@
+## 0.5.1 - Features
+* Rearrange clipboard history
+* Save pasted item to atom clipboard
+
+## 0.5.0 - Bugfixing
+* Update repo name
+
 ## 0.4.3 - Bugfixing
 * Update repo name
 
