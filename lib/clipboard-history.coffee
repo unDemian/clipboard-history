@@ -21,6 +21,5 @@ module.exports =
   deactivate: ->
     @editorSubscription?.off()
     @editorSubscription = null
-    @clipboard.remove()
 
   serialize: ->
