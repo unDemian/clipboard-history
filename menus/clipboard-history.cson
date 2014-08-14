@@ -1,3 +1,11 @@
+'context-menu':
+  '.workspace':
+    'Separator': '-'
+    'Copy': 'clipboard-history:copy'
+    'Paste': 'core:paste'
+    'Paste History': 'clipboard-history:paste'
+    'Separator': '-'
+
 'menu': [
   {
     'label': 'Packages'
