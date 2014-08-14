@@ -35,7 +35,6 @@ class ClipboardHistoryView extends SelectListView
 
     # Attach to view
     if @history.length > 0
-      @setMaxItems atom.config.get 'clipboard-history.maximumHistoryItems'
       @setItems @history.slice(0).reverse()
     else
       @setError "There are no items in your clipboard."

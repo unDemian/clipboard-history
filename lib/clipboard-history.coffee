@@ -3,9 +3,8 @@ ClipboardHistoryView = require './clipboard-history-view'
 module.exports =
 
   configDefaults:
-    showClearHistoryButton: true
     showSnippetForLargeItems: true
-    maximumHistoryItems: 15
+    showClearHistoryButton: true
 
   history: []
   clipboard: null
