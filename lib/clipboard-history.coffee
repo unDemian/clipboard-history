@@ -16,7 +16,7 @@ module.exports =
         @clipboard = new ClipboardHistoryView @history, editor
 
         editor.on 'editor:will-be-removed', =>
-          @clipboard.remove()
+          @clipboard = null
 
   deactivate: ->
     @editorSubscription?.off()
