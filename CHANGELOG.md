@@ -1,3 +1,9 @@
+## 0.6.0 - Features
+* Fix Issue #3
+* Remove maxItems setting
+* Add context menu
+
+
 ## 0.5.1 - Features
 * Rearrange clipboard history
 * Save pasted item to atom clipboard
