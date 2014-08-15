@@ -20,6 +20,15 @@ class ClipboardHistoryView extends SelectListView
       selectedText = @editor.getSelectedText()
       if selectedText.length > 0
         @_add selectedText
+      else if atom.config.get 'clipboard-history.allowCutLine'
+        @editor.buffer.beginTransaction()
+        originalPosition = @editor.getCursorBufferPosition()
+        @editor.selectLine()
+        selectedText = @editor.getSelectedText()
+        @editor.setCursorBufferPosition originalPosition
+        @editor.buffer.commitTransaction()
+        if selectedText.length > 0
+          @_add selectedText
 
   paste: ->
     exists = false

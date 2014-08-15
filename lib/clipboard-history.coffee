@@ -5,6 +5,7 @@ module.exports =
   configDefaults:
     showSnippetForLargeItems: true
     showClearHistoryButton: true
+    allowCutLine: true
 
   history: []
   clipboard: null
