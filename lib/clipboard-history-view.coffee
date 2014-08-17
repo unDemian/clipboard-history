@@ -12,12 +12,11 @@ class ClipboardHistoryView extends SelectListView
   initialize: (@history, @editorView) ->
     super
     @addClass('overlay clipboard-history from-bottom')
-    # {@editor} = @editorView
+    {@editor} = @editorView
     @_handleEvents()
 
   copy: ->
-    @editor = atom.workspace.getActiveEditor()
-    if @editor
+    if @editorView.active
       selectedText = @editor.getSelectedText()
       if selectedText.length > 0
         @_add selectedText
