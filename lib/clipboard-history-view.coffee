@@ -20,10 +20,8 @@ class ClipboardHistoryView extends SelectListView
     if @editor
       selectedText = @editor.getSelectedText()
       if selectedText.length > 0
-        console.log selectedText
         @_add selectedText
       else if atom.config.get 'clipboard-history.enableCutLine'
-        console.log 'what?'
         @editor.buffer.beginTransaction()
         originalPosition = @editor.getCursorBufferPosition()
         @editor.selectLine()
