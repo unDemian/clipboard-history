@@ -12,14 +12,25 @@ class ClipboardHistoryView extends SelectListView
   initialize: (@history, @editorView) ->
     super
     @addClass('overlay clipboard-history from-bottom')
-    {@editor} = @editorView
     @_handleEvents()
 
   copy: ->
-    if @editorView.active
+    @editor = atom.workspace.getActiveEditor()
+    if @editor
       selectedText = @editor.getSelectedText()
       if selectedText.length > 0
         @_add selectedText
+      else if atom.config.get 'clipboard-history.enableCutLine'
+        @editor.buffer.beginTransaction()
+        originalPosition = @editor.getCursorBufferPosition()
+        @editor.selectLine()
+        selectedText = @editor.getSelectedText()
+        @editor.setCursorBufferPosition originalPosition
+        @editor.buffer.commitTransaction()
+        if selectedText.length > 0
+          atom.clipboard.metadata = atom.clipboard.metadata || {}
+          atom.clipboard.metadata.fullline = true
+          @_add selectedText, atom.clipboard.metadata
 
   paste: ->
     exists = false
@@ -94,8 +105,8 @@ class ClipboardHistoryView extends SelectListView
 
   # Helper methods
   ##############################
-  _add: (element) ->
-    atom.clipboard.write element
+  _add: (element, metadata = {}) ->
+    atom.clipboard.write element, metadata
     @forceClear = false
 
     if @history.length is 0 and atom.config.get 'clipboard-history.showClearHistoryButton'

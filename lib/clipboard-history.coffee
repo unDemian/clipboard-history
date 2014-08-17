@@ -5,6 +5,7 @@ module.exports =
   configDefaults:
     showSnippetForLargeItems: true
     showClearHistoryButton: true
+    enableCutLine: false
 
   history: []
   clipboard: null
@@ -12,7 +13,7 @@ module.exports =
 
   activate: () ->
     @editorSubscription = atom.workspaceView.eachEditorView (editor) =>
-      if editor.attached and not editor.mini
+      if editor.attached and not editor.mini and not @clipboard
         @clipboard = new ClipboardHistoryView @history, editor
 
         editor.on 'editor:will-be-removed', =>
