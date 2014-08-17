@@ -12,7 +12,6 @@ class ClipboardHistoryView extends SelectListView
   initialize: (@history, @editorView) ->
     super
     @addClass('overlay clipboard-history from-bottom')
-    # {@editor} = @editorView
     @_handleEvents()
 
   copy: ->
