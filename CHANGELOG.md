@@ -1,3 +1,7 @@
+## 0.6.1 - Bugfixing
+* Fix conflict with cut-line package
+* Fix multiple windows bug
+
 ## 0.6.0 - Features
 * Fix Issue #3
 * Remove maxItems setting
