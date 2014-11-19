@@ -2,10 +2,19 @@ ClipboardHistoryView = require './clipboard-history-view'
 
 module.exports =
 
-  configDefaults:
-    showSnippetForLargeItems: true
-    showClearHistoryButton: true
-    enableCutLine: false
+  config:
+    showSnippetForLargeItems:
+      type: 'boolean'
+      default: true
+      description: "When a long clipboard item, preview it a separate tooltip"
+    showClearHistoryButton:
+      type: 'boolean'
+      default: true
+      description: "Display a button to clear your clipboard's history"
+    enableCopyLine:
+      type: 'boolean'
+      default: false
+      description: "Copy the whole line when no selection"
 
   history: []
   clipboard: null
