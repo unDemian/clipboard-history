@@ -29,6 +29,7 @@ class ClipboardHistoryView extends SelectListView
         @editor.buffer.commitTransaction()
         if selectedText.length > 0
           atom.clipboard.metadata = atom.clipboard.metadata || {}
+          atom.clipboard.metadata.fullline = true
           atom.clipboard.metadata.fullLine = true
           @_add selectedText, atom.clipboard.metadata
 
