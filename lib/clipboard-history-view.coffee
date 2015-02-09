@@ -1,4 +1,4 @@
-{ $$, EditorViewm, Emitter, SelectListView } = require 'atom-space-pen-views'
+{ $$, SelectListView } = require 'atom-space-pen-views'
 
 module.exports =
 

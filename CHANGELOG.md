@@ -1,3 +1,6 @@
+## 0.6.3 - Bugfixing
+* Remove not needed injected libraries
+
 ## 0.6.2 - Bugfixing
 * Update to the latest API changes
 * Fix issue #12
