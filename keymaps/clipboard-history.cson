@@ -1,11 +1,11 @@
-'.platform-darwin, .platform-darwin .workspace':
+'.platform-darwin, .platform-darwin .atom-workspace':
   'cmd-c':       'clipboard-history:copy'
   'cmd-shift-v': 'clipboard-history:paste'
 
-'.platform-win32, .platform-win32 .workspace':
+'.platform-win32, .platform-win32 .atom-workspace':
   'ctrl-c':       'clipboard-history:copy'
   'ctrl-shift-v': 'clipboard-history:paste'
 
-'.platform-linux, .platform-linux .workspace':
+'.platform-linux, .platform-linux .atom-workspace':
   'ctrl-c':       'clipboard-history:copy'
   'ctrl-shift-v': 'clipboard-history:paste'

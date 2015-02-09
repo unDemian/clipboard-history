@@ -1,5 +1,5 @@
 'context-menu':
-  '.workspace':
+  '.atom-workspace':
     'Separator': '-'
     'Copy': 'clipboard-history:copy'
     'Paste': 'core:paste'

@@ -1,3 +1,8 @@
+## 0.6.2 - Bugfixing
+* Update to the latest API changes
+* Fix issue #12
+* Several bugfixing and improvements
+
 ## 0.6.1 - Bugfixing
 * Fix conflict with cut-line package
 * Fix multiple windows bug
