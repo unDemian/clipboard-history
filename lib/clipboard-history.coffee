@@ -16,7 +16,7 @@ module.exports =
       description: 'Display a button to clear your clipboard\'s history'
     enableCopyLine:
       type: 'boolean'
-      default: false
+      default: true
       title: 'Enable Copy Line'
       description: 'Copy the whole line when no selection'
 

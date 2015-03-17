@@ -1,3 +1,7 @@
+## 0.6.4 - Bugfixing
+* Fix issue #15 (add copy full line to default)
+* Fix issue #13
+
 ## 0.6.3 - Bugfixing
 * Remove not needed injected libraries
 
