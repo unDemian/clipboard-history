@@ -1,10 +1,26 @@
 'context-menu':
-  '.atom-workspace':
-    'Separator': '-'
-    'Copy': 'clipboard-history:copy'
-    'Paste': 'core:paste'
-    'Paste History': 'clipboard-history:paste'
-    'Separator': '-'
+  '.atom-workspace': [
+    {
+      'label': 'Separator',
+      'command': '-'
+    },
+    {
+      'label': 'Copy',
+      'command': 'clipboard-history:copy'
+    },
+    {
+      'label': 'Paste',
+      'command': 'core:paste'
+    },
+    {
+      'label': 'Paste History',
+      'command': 'clipboard-history:paste'
+    },
+    {
+      'label': 'Separator',
+      'command': '-'
+    }
+  ]
 
 'menu': [
   {

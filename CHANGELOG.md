@@ -1,3 +1,7 @@
+## 0.6.5 - Bugfixing
+* Fix issue #16
+* Fix issue #17
+
 ## 0.6.4 - Bugfixing
 * Fix issue #15 (add copy full line to default)
 * Fix issue #13
