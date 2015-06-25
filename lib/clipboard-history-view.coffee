@@ -24,12 +24,12 @@ class ClipboardHistoryView extends SelectListView
       if selectedText.length > 0
         @_add selectedText
       else if atom.config.get 'clipboard-history.enableCopyLine'
-        @editor.buffer.beginTransaction()
+        #@editor.buffer.beginTransaction()
         originalPosition = @editor.getCursorBufferPosition()
-        @editor.selectLine()
+        @editor.selectLinesContainingCursors()
         selectedText = @editor.getSelectedText()
         @editor.setCursorBufferPosition originalPosition
-        @editor.buffer.commitTransaction()
+        #@editor.buffer.commitTransaction()
         if selectedText.length > 0
           atom.clipboard.metadata = atom.clipboard.metadata || {}
           atom.clipboard.metadata.fullline = true

@@ -1,3 +1,5 @@
+## 0.6.6 - Bugfixing
+
 ## 0.6.5 - Bugfixing
 * Fix issue #16
 * Fix issue #17
