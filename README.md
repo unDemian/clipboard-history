@@ -1,3 +1,5 @@
+### Unfortunately this is not maintained anymore, try https://atom.io/packages/clipboard-plus instead.
+
 # clipboard-history package
 
 Keep a history of your clipboard items. Let you paste them back in, as needed.
