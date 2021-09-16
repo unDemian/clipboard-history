@@ -1,4 +1,4 @@
-### Unfortunately this is not maintained anymore, try https://atom.io/packages/clipboard-plus instead.
+## Unfortunately this is not maintained anymore, try https://atom.io/packages/clipboard-plus instead.
 
 # clipboard-history package
 
